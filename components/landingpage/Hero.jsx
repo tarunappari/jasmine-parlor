@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import dynamic from "next/dynamic";
 const ModelScene = dynamic(() => import("@/components/3dmodels/ModelScene"), {
@@ -14,13 +14,16 @@ import fly2 from "@/public/assets/decors/fly2.png";
 import Image from "next/image";
 
 const Hero = () => {
+
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} hero-section`}>
       <div className={styles.imgContainer}>
         <Image src={hero3Img} alt="m" className={styles.leftImg} />
       </div>
       <div className={styles.content}>
-        <ModelScene />
+        <div className={styles.modelContainer}>
+          <ModelScene />
+        </div>
         <div>
           <h1>
             Enhancing Your Natural <Image src={fly} alt="fly" width={100} />{" "}

@@ -1,18 +1,86 @@
-import React, { useRef } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+import React, { useEffect, useRef } from "react";
+import { useGLTF, useAnimations } from "@react-three/drei";
+import * as THREE from "three";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function Butterfly(props) {
-  const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/models/butterfly.glb')
+  const group = useRef();
+  const { nodes, materials, animations } = useGLTF("/models/butterfly.glb");
   const { actions } = useAnimations(animations, group);
-  console.log(actions);
-  
+
+  useEffect(() => {
+    actions["Armature|ArmatureAction"]?.reset().fadeIn(0.5).play();
+
+    if (!group.current) return;
+
+    group.current.traverse((child) => {
+      if (child.isMesh || child.isSkinnedMesh) {
+        child.castShadow = true;
+        child.receiveShadow = false;
+
+        if (child.material) {
+          // ✅ modern color handling
+          if (child.material.map) {
+            child.material.map.colorSpace = THREE.SRGBColorSpace;
+          }
+
+          // optional tint
+          child.material.color.set("#fe8fda");
+          child.material.needsUpdate = true;
+        }
+      }
+    });
+  }, [actions]);
+
+  useEffect(() => {
+    if (!group.current) return;
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".hero-section",
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+          // markers: true, // enable for debugging
+        },
+      });
+
+      tl.to(group.current.rotation, {
+        y: 2,
+        x: -0.4,
+      }).to(
+        group.current.position,
+        {
+          y: -5, // move ~100vh down
+        },
+        0
+      );
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group {...props} dispose={null}>
       <group name="Sketchfab_Scene">
-        <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]} scale={0.498}>
-          <group name="Butterfly_3fbx" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+        <group
+          name="Sketchfab_model"
+          castShadow
+          rotation={[0, 0, 0]}
+          scale={0.01}
+        >
+          <group
+            name="Butterfly_3fbx"
+            ref={group}
+            castShadow
+            rotation={[-0.7, -2, -0.5]}
+            scale={0.2}
+            // scale={0.7}
+          >
             <group name="Object_2">
               <group name="RootNode">
                 <group
@@ -152,7 +220,7 @@ export function Butterfly(props) {
         </group>
       </group>
     </group>
-  )
+  );
 }
 
-useGLTF.preload('/models/butterfly.glb');
+useGLTF.preload("/models/butterfly.glb");
