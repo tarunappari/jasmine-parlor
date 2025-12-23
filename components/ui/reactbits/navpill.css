@@ -1,17 +1,18 @@
 .pill-nav-container {
   position: absolute;
-  top: 1em;
+  top: 2rem;
   z-index: 99;
   width: 98.5%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 @media (max-width: 768px) {
   .pill-nav-container {
     width: 98.5%;
     left: 0;
+
   }
 }
 

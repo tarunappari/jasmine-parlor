@@ -1,7 +1,33 @@
-.container{
+.container {
   position: relative;
+  margin: 0 2rem;
 
-  .logo{
+  .logo {
     position: absolute;
+    display: flex;
+    align-items: center;
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      position: relative;
+      top: -0.5rem;
+      left: -1.5rem;
+    }
+  }
+
+  .divider {
+    top: 7rem;
+    margin: 0 auto;
+    position: absolute;
+    width: 95vw;
+    height: 0.1rem;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--palepink) 50%,
+      transparent 100%
+    );
+    opacity: 0.9;
   }
 }

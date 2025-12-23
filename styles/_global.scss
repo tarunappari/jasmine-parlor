@@ -39,6 +39,7 @@
   --white: #ffffff;
   --cream:#fffef8;
   --text:#3e171b;
+  --pink:#471f28;
   --black: #151515;
   --palepink: #ffe0e6;
   --charcoal: #050608;
@@ -60,20 +61,16 @@ body {
   font-optical-sizing: auto;
 }
 
-span {
-  color: var(--para);
-}
-
 h1,
 h2,
 h3,
 h4 {
-  color: var(--green);
+  color: var(--pink);
   font-family: "playfair", serif;
 }
 
-p {
-  color: var(--palegreen);
+p{
+  color: rgb(62, 23, 27,0.85);
 }
 
 button,
