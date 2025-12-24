@@ -15,7 +15,7 @@
   padding-top: 10rem;
   position: relative;
 
-  .mobileP{
+  .mobileP {
     display: none;
   }
 
@@ -27,14 +27,14 @@
     align-items: flex-start;
     justify-content: flex-start;
     .modelContainer {
-      height: 55rem;
-      width: 45rem;
+      height: 25rem;
+      width: 25rem;
       display: flex;
       justify-content: center;
       align-items: center;
       position: absolute;
-      top: -19rem;
-      left: -17rem;
+      top: -5rem;
+      left: -7rem;
     }
 
     .pill {
@@ -172,8 +172,8 @@
       padding: 2rem;
       padding-bottom: 4rem;
       .modelContainer {
-        top: -22rem;
-        left: -20rem;
+        top: -8rem;
+        left: -10rem;
       }
 
       h1 {
@@ -202,8 +202,8 @@
       padding-bottom: 4rem;
       padding-left: 0rem;
       .modelContainer {
-        top: -22rem;
-        left: -22rem;
+        top: -8rem;
+        left: -12rem;
       }
 
       h1 {
@@ -258,86 +258,87 @@
 }
 
 @media (max-width: 625px) {
- .container {
-  min-height: 85vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  display: grid;
-  grid-template-rows: 60% 40%;
-  gap: 3rem;
-  padding: 0 2rem;
-  margin-top: 8rem;
+  .container {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-rows: 60% 40%;
+    gap: 3rem;
+    padding: 0 2rem;
+    margin-top: 8rem;
 
-  .mobileP{
-    display:block;
-  }
-
-  .deskP{
-    display: none;
-  }
-
-  .content {
-    padding: 0rem;
-    padding-left: 0.5rem;
-    position: relative;
-    margin-top: -2rem;
-
-    .modelContainer {
-      top: -25rem;
-      left: -21rem;
+    .mobileP {
+      display: block;
     }
 
-    .pill{
-      margin-left: 2rem;
+    .deskP {
+      display: none;
     }
 
-    h1 {
-      font-size: 1.5rem;
-      img {
-        width: 4rem;
-        right: -2.5rem;
-        top: -1.75rem;
+    .content {
+      padding: 0rem;
+      padding-left: 0.5rem;
+      position: relative;
+      margin-top: -2rem;
+
+      .modelContainer {
+        top: -5.5rem;
+        left: -6.5rem;
+        height: 15rem;
+        width: 15rem;
+      }
+
+      .pill {
+        margin-left: 2rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        img {
+          width: 4rem;
+          right: -2.5rem;
+          top: -1.75rem;
+        }
+      }
+
+      p {
+        position: relative;
+        padding: 0.75rem 0;
+
+        img {
+          top: -1rem;
+          left: -1rem;
+          width: 4rem;
+        }
       }
     }
 
-    p {
-      
-      position: relative;
-      padding: 0.75rem 0;
+    .imgMainContainer {
+      align-items: flex-start;
+      justify-content: flex-end;
+      top: -6.5rem;
+      right: -3rem;
+    }
 
+    .imgContainer {
       img {
-        top: -1rem;
+        position: relative;
+      }
+
+      .rightImg {
+        width: 10rem;
+        height: 17rem;
+        left: 2rem;
+      }
+
+      .leftImg {
+        width: 11rem;
+        height: 17rem;
         left: -1rem;
-        width: 4rem;
       }
     }
   }
-
-  .imgMainContainer {
-    align-items: flex-start;
-    justify-content: flex-end;
-    top: -6.5rem;
-    right: -3rem;
-  }
-
-  .imgContainer {
-    img {
-      position: relative;
-    }
-
-    .rightImg {
-      width: 10rem;
-      height: 17rem;
-      left: 2rem;
-    }
-
-    .leftImg {
-      width: 11rem;
-      height: 17rem;
-      left: -1rem;
-    }
-  }
-}
 }

@@ -7,7 +7,7 @@ import { Suspense } from "react";
 export default function ModelScene() {
   return (
     <Suspense fallback={null}>
-      <Canvas shadows camera={{ position: [0, 3, 5] }}>
+      <Canvas shadows camera={{ position: [2, 5, 5] }}>
         <ambientLight intensity={0.7} />
 
         <directionalLight
