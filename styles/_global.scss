@@ -1,20 +1,6 @@
 @use "tailwindcss";
 
 @font-face {
-  font-family: "inter";
-  src: url("/fonts/inter.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "aeonik";
-  src: url("/fonts/aeonik.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "poppins";
   src: url("/fonts/popins.ttf") format("truetype");
   font-weight: normal;
@@ -62,6 +48,31 @@ body {
   font-optical-sizing: auto;
 }
 
+.mainPage {
+  position: relative;
+
+  .decor {
+    width: 8rem;
+    position: fixed;
+    z-index: -9;
+  }
+
+  .decor1 {
+    left: -2rem;
+    top: 3rem;
+    transform: rotate(170deg);
+    opacity: 0.8;
+  }
+
+  .decor2 {
+    width: 6rem;
+    right: 0rem;
+    bottom: 3rem;
+    transform: rotate(0deg);
+    opacity: 0.3;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -91,4 +102,15 @@ svg {
     transparent 100%
   );
   margin: 2rem auto;
+}
+
+.galleryTitle{
+
+  .lottie{
+    position: absolute;
+    right: -7rem;
+    top: -6rem;
+    width: 8rem;
+    opacity: 0.9 ;
+  }
 }

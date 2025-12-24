@@ -28,9 +28,6 @@ const Hero = () => {
           <h1>
             {" "}
             Care & Elegance{" "}
-            <i>
-              <IconGenderFemale stroke={1} color="#3e171b" />
-            </i>
           </h1>
         </div>
         <p>

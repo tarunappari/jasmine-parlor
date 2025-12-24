@@ -1,129 +1,16 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import styles from "@/styles/landingpage/AboutUs.module.scss";
 import img from "@/public/assets/about/about.jpg";
 import img2 from "@/public/assets/about/about2.jpg";
-import { IconSparkles, IconShield, IconHeart } from "@tabler/icons-react";
+import { IconSparkles } from "@tabler/icons-react";
 import Image from "next/image";
 import Lottie from "lottie-react";
-import butterflyAnimation from "@/public/lottie/Butterfly.json";
 import butterflyAnimation2 from "@/public/lottie/butterfly2.json";
-import gsap from "gsap";
+import fly3 from "@/public/lottie/fly3.json";
+
 
 const AboutUs = () => {
-  const bottleRef = useRef(null);
-  const butterfly = useRef(null);
-
-  useEffect(() => {
-    if (!bottleRef.current) return;
-
-    const ctx = gsap.context(() => {
-      const mm = gsap.matchMedia();
-
-      mm.add("(min-width: 1700px)", () => {
-        gsap.to(bottleRef.current, {
-          scrollTrigger: {
-            trigger: bottleRef.current,
-            start: "top top+=60",
-            end: "bottom top+=10",
-            scrub: 1,
-          },
-          y: "110vh",
-          x: "-65vw",
-          scale: 2.5,
-          rotation: 15,
-          opacity: 1,
-          ease: "none",
-        });
-
-        gsap.to(butterfly.current, {
-          scrollTrigger: {
-            trigger: butterfly.current,
-            start: "top top+=60",
-            end: "bottom top+=10",
-            scrub: 1,
-          },
-          y: "38vh",
-          x: "27vw",
-          scale: 2.4,
-          rotation: -15,
-          opacity: 1,
-          ease: "none",
-        });
-      });
-
-      // DESKTOP (>= 1024px)
-      mm.add("(min-width: 1024px) and (max-width: 1699px)", () => {
-        gsap.to(bottleRef.current, {
-          scrollTrigger: {
-            trigger: bottleRef.current,
-            start: "top top+=60",
-            end: "bottom top+=40",
-            scrub: 1,
-          },
-          y: "95vh",
-          x: "20vw",
-          scale: 2,
-          rotation: 15,
-          opacity: 1,
-          ease: "none",
-        });
-
-        gsap.to(butterfly.current, {
-          scrollTrigger: {
-            trigger: butterfly.current,
-            start: "top top+=60",
-            end: "bottom top+=40",
-            scrub: 1,
-          },
-          y: "68vh",
-          x: "30vw",
-          scale: 1.8,
-          rotation: -15,
-          opacity: 1,
-          ease: "none",
-        });
-      });
-
-      mm.add("(min-width: 768px) and (max-width: 1023px)", () => {
-        gsap.to(bottleRef.current, {
-          scrollTrigger: {
-            trigger: bottleRef.current,
-            start: "top top+=60",
-            end: "bottom top+=70",
-            scrub: 1,
-          },
-          y: "85vh",
-          x: "25vw",
-          scale: 1.3,
-          rotation: -10,
-          opacity: 1,
-          ease: "none",
-        });
-      });
-
-      mm.add("(max-width: 767px)", () => {
-        gsap.to(bottleRef.current, {
-          scrollTrigger: {
-            trigger: bottleRef.current,
-            start: "top top+=50",
-            end: "bottom top+=60",
-            scrub: 1,
-          },
-          y: "70vh",
-          x: "10vw",
-          scale: 1.2,
-          rotation: -5,
-          opacity: 1,
-          ease: "none",
-        });
-      });
-
-      return () => mm.revert();
-    });
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section className={styles.container} id="about">
@@ -144,8 +31,8 @@ const AboutUs = () => {
           </span>
           <h2>
             Where Beauty Meets Confidence{" "}
-            <div className={styles.lottie2} ref={bottleRef}>
-              <Lottie animationData={butterflyAnimation} loop autoplay />
+            <div className={styles.lottie2}>
+              <Lottie animationData={fly3} loop autoplay />
             </div>
           </h2>
         </div>
@@ -166,7 +53,7 @@ const AboutUs = () => {
             our goal is to give you a relaxing experience and stunning results
             every time.
           </p>
-          <div className={styles.lottie} ref={butterfly}>
+          <div className={styles.lottie}>
             <Lottie animationData={butterflyAnimation2} loop autoplay />
           </div>
         </div>

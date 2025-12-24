@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 
   p {
     color: rgb(255, 255, 255, 0.6);
@@ -87,5 +88,21 @@
         );
       }
     }
+  }
+
+  .lottie2{
+    position: absolute;
+    width: 8rem;
+    bottom: -4rem;
+    left: -3rem;
+    transform: rotate(20deg);
+  }
+
+   .lottie1{
+    position: absolute;
+    width: 8rem;
+    top: -3rem;
+    right: -4rem;
+    transform: rotate(-25deg);
   }
 }

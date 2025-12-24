@@ -8,9 +8,15 @@ import TestimonialSection from '@/components/landingpage/TestimonialSection'
 import Contact from '@/components/landingpage/Contact'
 import Footer from '@/components/common/Footer'
 
+import decor1 from '@/public/assets/decors/decor.webp'
+import decor2 from '@/public/assets/decors/leaf3.webp'
+import decor3 from '@/public/assets/decors/leaf2.webp'
+import decor4 from '@/public/assets/decors/leaf1.webp'
+import Image from 'next/image'
+
 const page = () => {
   return (
-    <div style={{width:'99vw',overflow:'hidden'}}>
+    <div className='mainPage' style={{width:'99vw',overflow:'hidden'}}>
       <Navbar />
       <Hero />
       <AboutUs />
@@ -20,6 +26,10 @@ const page = () => {
       <TestimonialSection />
       <Contact />
       <Footer />
+      
+      
+      <Image src={decor1} alt='decor1 ' className='decor1 decor' />
+      <Image src={decor2} alt='decor1' className='decor2 decor' />
     </div>
   )
 }

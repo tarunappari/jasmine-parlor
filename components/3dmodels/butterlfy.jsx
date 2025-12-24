@@ -35,35 +35,6 @@ export function Butterfly(props) {
     });
   }, [actions]);
 
-  useEffect(() => {
-    if (!group.current) return;
-
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".hero-section",
-          start: "top top",
-          end: "bottom top",
-          scrub: 1,
-          // markers: true, // enable for debugging
-        },
-      });
-
-      tl.to(group.current.rotation, {
-        y: 2,
-        x: -0.4,
-      }).to(
-        group.current.position,
-        {
-          y: -5, // move ~100vh down
-        },
-        0
-      );
-    });
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <group {...props} dispose={null}>
       <group name="Sketchfab_Scene">
@@ -75,11 +46,10 @@ export function Butterfly(props) {
         >
           <group
             name="Butterfly_3fbx"
-            ref={group}
             castShadow
             rotation={[-0.7, -2, -0.5]}
-            scale={0.2}
-            // scale={0.7}
+            scale={0.35}
+            ref={group}
           >
             <group name="Object_2">
               <group name="RootNode">

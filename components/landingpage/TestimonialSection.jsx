@@ -1,5 +1,9 @@
+"use client";
 import React from "react";
 import styles from "@/styles/landingpage/TestimonialSection.module.scss";
+import Lottie from "lottie-react";
+
+import fly3 from "@/public/lottie/fly2.json";
 
 const TestimonialSection = () => {
   return (
@@ -33,6 +37,11 @@ const TestimonialSection = () => {
           </div>
         </div>
       </div>
+
+      <div className={styles.lottie2}>
+        <Lottie animationData={fly3} loop autoplay />
+      </div>
+      
     </div>
   );
 };

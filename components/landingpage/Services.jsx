@@ -11,6 +11,10 @@ import bride from "@/public/assets/services/bride.webp";
 import hair from "@/public/assets/services/hair.webp";
 import mar from "@/public/assets/services/mar.webp";
 import party from "@/public/assets/services/party.webp";
+import fly from "@/public/assets/decors/fly.webp";
+import Image from "next/image";
+import fly2 from "@/public/lottie/fly3.json";
+import Lottie from "lottie-react";
 
 const Services = () => {
   const services = [
@@ -63,8 +67,14 @@ const Services = () => {
           <span className={styles.pill}>
             <IconSparkles size={16} stroke={2} />
             Our Services
+            <Image src={fly} alt="fly" width={80} />
           </span>
-          <h2>Tailored Beauty Solutions</h2>
+          <h2>
+            Tailored Beauty Solutions
+            <div className={styles.lotie}>
+              <Lottie animationData={fly2} loop autoplay />
+            </div>
+          </h2>
           <p>
             Discover our range of professional beauty services designed to
             enhance your natural beauty
