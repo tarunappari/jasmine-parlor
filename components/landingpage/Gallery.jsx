@@ -98,7 +98,7 @@ const Gallery = () => {
         <MasonryGrid
           items={galleryItems}
           // Responsive columns controlled by Tailwind classes
-          className="columns-3 sm:columns-2 lg:columns-3 xl:columns-4"
+          className="columns-3 sm:columns-3 lg:columns-3 xl:columns-4"
           gap="1rem"
           renderItem={(item) => (
             <div className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-card">

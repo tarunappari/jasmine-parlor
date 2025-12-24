@@ -16,7 +16,7 @@ export function Butterfly(props) {
   // mobile detection via viewport width
   const isMobile = viewport.width < 8;
 
-  const butterflyScale = isMobile ? 0.25 : 0.35;
+  const butterflyScale = isMobile ? 0.27 : 0.35;
   
 
   useEffect(() => {
