@@ -27,7 +27,6 @@
   .footerContent {
     max-width: 1400px;
     margin: 0 auto;
-    
   }
 
   // Top Section
@@ -65,7 +64,6 @@
 
   // Links Section
   .linksSection {
-
     .linkColumn {
       display: flex;
       flex-direction: column;
@@ -123,8 +121,6 @@
       .connectDiv {
         display: flex;
         gap: 1rem;
-
-        
 
         a {
           color: rgba(255, 255, 255, 0.7);
@@ -212,10 +208,12 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 3rem 1.5rem 1.5rem;
+    padding: 0rem 1.5rem 1.5rem;
 
     .topSection {
-      gap: 2rem;
+      gap: 1rem;
+      flex-direction: column;
+      margin: 2rem;
     }
 
     .brandSection {
@@ -223,18 +221,12 @@
         .brandName {
           font-size: 1.5rem;
         }
-
-        .description {
-          font-size: 0.875rem;
-        }
       }
     }
 
     .linksSection {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-
       .linkColumn {
+        align-items: center;
         h4 {
           font-size: 0.9rem;
         }
@@ -246,42 +238,28 @@
     }
 
     .bottomSection {
-      flex-direction: column;
       align-items: flex-start;
       gap: 1rem;
-
-      .legalLinks {
-        flex-wrap: wrap;
-      }
     }
   }
 }
 
 @media (max-width: 480px) {
   .container {
-    padding: 2rem 1rem 1rem;
-
+    margin-top: -5rem;
     .brandSection {
-      .logoBox img {
-        width: 50px;
-        height: 50px;
+      width: 120%;
+      .logoBox {
+        img {
+          width: 5rem;
+          height: 5rem;
+        }
       }
 
       .brandText {
         .brandName {
           font-size: 1.25rem;
         }
-
-        .tagline {
-          font-size: 0.75rem;
-        }
-      }
-    }
-
-    .bottomSection {
-      .copyright p,
-      .legalLinks a {
-        font-size: 0.75rem;
       }
     }
   }

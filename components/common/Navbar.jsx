@@ -11,7 +11,7 @@ const Navbar = () => {
         <Image src={logo} alt="logo" width={120} />
         <h1>Jasmine</h1>
       </div>
-      <div>
+      <div className={styles.button}>
         <PillNav
           logo={logo}
           logoAlt="Company Logo"

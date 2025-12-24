@@ -104,13 +104,59 @@ svg {
   margin: 2rem auto;
 }
 
-.galleryTitle{
-
-  .lottie{
+.galleryTitle {
+  .lottie {
     position: absolute;
     right: -7rem;
     top: -6rem;
     width: 8rem;
-    opacity: 0.9 ;
+    opacity: 0.9;
+  }
+}
+
+@media (max-width: 768px) {
+  .galleryTitle {
+    .lottie {
+      right: -7rem;
+      top: -6rem;
+      width: 6rem;
+    }
+  }
+}
+
+@media (max-width: 625px) {
+  .mainPage {
+    .decor {
+      width: 5rem;
+      position: fixed;
+      z-index: -9;
+    }
+
+    .decor1 {
+      left: auto;
+      right: -1.5rem;
+      transform: rotate(210deg);
+      top: 4rem;
+      opacity: 0.8;
+    }
+
+    .decor2 {
+      width: 3.5rem;
+      left: 0rem;
+      bottom: 3rem;
+      transform: rotate(0deg) scaleX(-1);
+      opacity: 0.3;
+    }
+  }
+}
+
+
+@media (max-width: 485px) {
+  .galleryTitle {
+    .lottie {
+      right: -2rem;
+      top: -6rem;
+      width: 5rem;
+    }
   }
 }

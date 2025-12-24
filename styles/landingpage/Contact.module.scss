@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding:6rem 2rem;
+  padding: 6rem 2rem;
   position: relative;
   overflow: hidden;
 
@@ -210,7 +210,7 @@
     .content {
       .mainGrid {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 1.5rem;
 
         .mapSection {
           min-height: 450px;
@@ -220,13 +220,14 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 760px) {
   .container {
-    padding: 4rem 1.5rem;
+    padding: 3rem 1rem;
 
     .content {
+
       .header {
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
 
         h2 {
           font-size: 2rem;
@@ -238,80 +239,74 @@
       }
 
       .mainGrid {
-        gap: 2rem;
 
         .infoSection {
-          .brandCard {
-            padding: 2rem 1.5rem;
+          padding: 2rem;
 
-            .brandHeader {
-              margin-bottom: 2rem;
-              padding-bottom: 1.5rem;
-
-              .logoCircle {
-                width: 70px;
-                height: 70px;
-              }
-
-              h3 {
-                font-size: 1.5rem;
-              }
+          .contactCards {
+            .infoCard {
+              padding: 1rem;
             }
+          }
 
-            .contactCards {
+          .actionButtons {
+            gap: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 590px) {
+  .container {
+
+    .content {
+
+      .header {
+        h2 {
+          font-size: 2rem;
+        }
+      }
+
+      .mainGrid {
+
+        .infoSection {
+          padding: 2rem;
+
+          .contactCards {
+            flex-direction: column;
+            gap: 0rem;
+            .infoCard {
+              display: flex;
+              align-items: center;
               gap: 1rem;
-
-              .infoCard {
-                padding: 1.25rem;
-                gap: 1rem;
-
-                &:hover {
-                  transform: translateY(-4px);
-                }
-
-                .iconBox {
-                  width: 45px;
-                  height: 45px;
-                }
-
-                .infoText {
-                  h4 {
-                    font-size: 1rem;
-                  }
-
-                  p {
-                    font-size: 0.9rem;
-                  }
-                }
-              }
             }
+          }
 
-            .actionButtons {
-              grid-template-columns: 1fr;
-              gap: 0.75rem;
+          .actionButtons {
+            gap: 1rem;
+            flex-direction: column;
 
-              a {
-                padding: 0.9rem 1.25rem;
-                font-size: 0.95rem;
-              }
+            a{
+              width: 100%;
             }
           }
         }
 
         .mapSection {
-          min-height: 400px;
+        
 
-          .mapContainer {
-            .mapOverlay {
-              bottom: 1rem;
+        .mapContainer {
 
-              .directionsButton {
-                padding: 0.75rem 1.5rem;
-                font-size: 0.9rem;
-              }
+          .mapOverlay {
+
+            .directionsButton {
+              padding: 0.5rem 1rem;
             }
           }
         }
+      }
       }
     }
   }

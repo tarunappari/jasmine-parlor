@@ -93,29 +93,59 @@
     .content {
       .header {
         margin-bottom: 3rem;
-
         h2 {
           font-size: 2rem;
+          .lotie {
+            width: 4rem;
+            top: 0.5rem;
+            left: -2rem;
+          }
         }
 
         p {
           font-size: 1rem;
         }
       }
+
+      .servicesGrid {
+        margin-top: -3rem;
+        .card {
+          width: 8rem;
+          height: 8rem;
+        }
+      }
     }
   }
 }
 
-@media (max-width: 410px) {
+@media (max-width: 425px) {
   .container {
-    .servicesGrid {
-      margin-top: -5rem;
-      .card {
-        max-width: 7rem;
-        max-height: 7rem;
+    .content {
+      .header {
+        margin-bottom: 3rem;
 
-        img {
-          width: 5rem;
+        h2 {
+          font-size: 1.75rem;
+          .lotie {
+            width: 4rem;
+            top: 0.5rem;
+            left: -2.5rem;
+          }
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .servicesGrid {
+        margin-top: -5rem;
+        .card {
+          width: 7rem;
+          height: 7rem;
+          img {
+            width: 5rem;
+          }
         }
       }
     }

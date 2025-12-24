@@ -58,10 +58,14 @@ const Hero = () => {
           <motion.h1 variants={itemVariants}>Beauty with </motion.h1>
           <motion.h1 variants={itemVariants}> Care & Elegance </motion.h1>
         </div>
-        <motion.p variants={itemVariants}>
+        <motion.p className={styles.deskP} variants={itemVariants}>
           We specialize in bridal makeup, skincare, hair styling, and
           personalized beauty services designed to make every woman feel
           confident and beautiful.
+          <Image src={fly2} alt="fly" width={70} />
+        </motion.p>
+        <motion.p className={styles.mobileP} variants={itemVariants}>
+          Personalized bridal makeup and beauty services made just for you.
           <Image src={fly2} alt="fly" width={70} />
         </motion.p>
         <div className={styles.btnDiv}>

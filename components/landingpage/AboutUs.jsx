@@ -76,7 +76,7 @@ const AboutUs = () => {
             professional, and affordable beauty services using quality products
             and modern techniques.
           </motion.p>
-          <motion.p variants={itemVariants}>
+          <motion.p className={styles.mobileP} variants={itemVariants}>
             Whether it's your wedding, a special occasion, or regular self-care,
             our goal is to give you a relaxing experience and stunning results
             every time.

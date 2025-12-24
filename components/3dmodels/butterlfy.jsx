@@ -3,6 +3,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 import * as THREE from "three";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useThree } from "@react-three/fiber";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,6 +11,13 @@ export function Butterfly(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/models/butterfly.glb");
   const { actions } = useAnimations(animations, group);
+  const { viewport } = useThree();
+
+  // mobile detection via viewport width
+  const isMobile = viewport.width < 8;
+
+  const butterflyScale = isMobile ? 0.25 : 0.35;
+  
 
   useEffect(() => {
     actions["Armature|ArmatureAction"]?.reset().fadeIn(0.5).play();
@@ -48,7 +56,7 @@ export function Butterfly(props) {
             name="Butterfly_3fbx"
             castShadow
             rotation={[-0.7, -2, -0.5]}
-            scale={0.35}
+            scale={butterflyScale}
             ref={group}
           >
             <group name="Object_2">
