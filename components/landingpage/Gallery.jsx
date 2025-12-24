@@ -17,6 +17,7 @@ import img13 from "@/public/assets/gallery/img13.webp";
 import { IconSparkles } from "@tabler/icons-react";
 import butterflyAnimation2 from "@/public/lottie/fly1.json";
 import Lottie from "lottie-react";
+import { motion } from "framer-motion";
 
 const galleryItems = [
   { id: 1, src: img1.src },
@@ -35,23 +36,63 @@ const galleryItems = [
 ];
 
 const Gallery = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
   return (
-    <div className="w-full min-h-screen bg-background p-4 sm:p-6 md:p-8">
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      className="w-full min-h-screen bg-background p-4 sm:p-6 md:p-8"
+    >
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center text-center mt-2 mb-8 " style={{flexDirection:'column'}}>
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[var(--palepink)] text-[0.9rem] font-semibold text-[var(--text)] mb-3">
+        <div
+          className="flex items-center text-center mt-2 mb-8 "
+          style={{ flexDirection: "column" }}
+        >
+          <motion.span
+            variants={itemVariants}
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[var(--palepink)] text-[0.9rem] font-semibold text-[var(--text)] mb-3"
+          >
             <IconSparkles className="text-[var(--pink)]" size={16} stroke={2} />
             Gallery
-          </span>
-          <h1 className="relative galleryTitle text-3xl md:text-5xl font-bold text-foreground mb-3">
+          </motion.span>
+          <motion.h1
+            variants={itemVariants}
+            className="relative galleryTitle text-3xl md:text-5xl font-bold text-foreground mb-3"
+          >
             Our Beautiful Work
             <div className="lottie">
               <Lottie animationData={butterflyAnimation2} loop autoplay />
             </div>
-          </h1>
-          <p className="text-lg text-muted-foreground">
+          </motion.h1>
+          <motion.p
+            variants={itemVariants}
+            className="text-lg text-muted-foreground"
+          >
             A glimpse of the magic we create at Jasmine Beauty Parlor
-          </p>
+          </motion.p>
         </div>
 
         <MasonryGrid
@@ -71,7 +112,7 @@ const Gallery = () => {
           )}
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

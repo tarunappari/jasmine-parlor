@@ -9,7 +9,6 @@ const ServiceGrid = (
   { title, subtitle, services, className, ...props },
   ref
 ) => {
-  // Animation variants for the container to orchestrate children animations
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -20,7 +19,6 @@ const ServiceGrid = (
     },
   };
 
-  // Animation variants for each grid item
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
@@ -46,7 +44,8 @@ const ServiceGrid = (
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6 md:gap-8"
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.7 }}
         >
           {services.map((service, index) => (
             <motion.a
