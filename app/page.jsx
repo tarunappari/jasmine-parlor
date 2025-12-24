@@ -1,14 +1,24 @@
 import Navbar from '@/components/common/Navbar'
-import About from '@/components/landingpage/About'
 import Hero from '@/components/landingpage/Hero'
+import AboutUs from '@/components/landingpage/AboutUs'
+import Services from '@/components/landingpage/Services'
 import React from 'react'
+import Gallery from '@/components/landingpage/Gallery'
+import TestimonialSection from '@/components/landingpage/TestimonialSection'
+import Contact from '@/components/landingpage/Contact'
+import Footer from '@/components/common/Footer'
 
 const page = () => {
   return (
-    <div>
+    <div style={{width:'99vw',overflow:'hidden'}}>
       <Navbar />
       <Hero />
-      <About />
+      <AboutUs />
+      <Services />
+      <Gallery />
+      <TestimonialSection />
+      <Contact />
+      <Footer />
     </div>
   )
 }

@@ -1,9 +1,15 @@
 .container {
-  min-height: 100vh;
-  background-color: #fffefb;
+  min-height: 85vh;
+  // background: linear-gradient(
+  //   360deg,
+  //   rgba(255, 255, 255, 1) 72%,
+  //   rgba(255, 224, 230, 1) 93%,
+  //   rgba(255, 212, 222, 1) 100%
+  // );
+  // background-color: #fffefb;
   display: grid;
-  grid-template-columns: 25% 50% 25%;
-  align-items: center;
+  grid-template-columns: 60% 40%;
+  align-items: end;
   gap: 1rem;
   padding: 0 5rem;
   padding-top: 10rem;
@@ -18,19 +24,30 @@
       justify-content: center;
       align-items: center;
       position: absolute;
-      top: -20rem;
+      top: -19rem;
       left: -17rem;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 0.35rem 0.95rem;
+      border-radius: 2rem;
+      background-color: var(--palepink);
+      font-size: 0.8rem;
+      color: rgb(62, 23, 27, 0.8);
+      font-weight: 700;
+      margin-left: 3rem;
     }
 
     h1 {
       font-size: 3.5rem;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 1rem;
       position: relative;
       img {
         position: absolute;
-        right: 3.8rem;
+        right: 14rem;
         top: -2rem;
       }
 
@@ -62,11 +79,12 @@
         display: flex;
         align-items: center;
         border: 0.13rem solid var(--text);
-        padding: 0.75rem 1.5rem;
+        padding: 0.5rem 1.25rem;
         border-radius: 2rem;
         gap: 0.2rem;
         transition: 0.2s all;
         color: var(--text);
+        z-index: 99;
 
         svg {
           color: #3e171b;
@@ -93,55 +111,49 @@
     }
   }
 
-  .imgContainer {
+  .imgMainContainer {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 2rem;
     position: relative;
-    height: 28rem;
-    width: 25rem;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    background: linear-gradient(
-      to top,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0.85) 5%,
-      rgba(255, 255, 255, 0.7) 10%,
-      rgb(254, 177, 198, 0.4) 100%
-    );
-
-    img {
-      position: relative;
-      top: -25%;
-    }
-
-    .rightImg {
-      width: 25rem;
-      height: 40rem;
-    }
-
-    .leftImg {
-      width: 25rem;
-      height: 38rem;
-    }
 
     &::after {
       content: "";
       position: absolute;
-      bottom: 0;
+      bottom: -1rem;
       left: 0;
       width: 100%;
       height: 40%;
       background: linear-gradient(
         to top,
         rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 0.85) 25%,
-        rgba(255, 255, 255, 0.7) 55%,
+        rgba(255, 255, 255, 1) 25%,
+        rgba(255, 255, 255, 0.3) 35%,
         rgba(255, 255, 255, 0) 100%
       );
       pointer-events: none;
       z-index: 1;
+    }
+  }
+
+  .imgContainer {
+
+    img {
+      position: relative;
+      top: -30%;
+    }
+
+    .rightImg {
+      width: 23rem;
+      height: 35rem;
+      left: 2rem;
+      transform: rotate(-1deg);
+    }
+
+    .leftImg {
+      width: 26rem;
+      height: 35rem;
+      left: -3rem;
+      transform: rotate(5deg);
     }
   }
 }

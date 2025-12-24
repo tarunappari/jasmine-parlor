@@ -1,0 +1,302 @@
+.container {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+
+  .content {
+    min-width: 90vw;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+
+    .header {
+      text-align: center;
+      margin-bottom: 4rem;
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1.2rem;
+        border-radius: 2rem;
+        background-color: var(--palepink);
+        font-size: 0.85rem;
+        color: var(--text);
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+
+        svg {
+          color: var(--pink);
+        }
+      }
+
+      h2 {
+        font-size: 2.75rem;
+        font-weight: 800;
+        color: var(--pink);
+        margin: 0 0 1rem 0;
+        line-height: 1.2;
+        font-family: "playfair", serif;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: rgba(62, 23, 27, 0.75);
+        margin: 0;
+      }
+    }
+
+    .mainGrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+
+      .infoSection {
+        padding: 2rem;
+        border-radius: 2rem;
+        box-shadow: 1px 1px 10px var(--palepink);
+        background-color: rgb(251, 250, 248);
+
+        & > div {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .brandHeader {
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+
+        .contactCards {
+          display: flex;
+          gap: 1rem;
+          .infoCard {
+            padding: 1rem;
+
+            .iconBox {
+              display: inline-block;
+              padding: 0.5rem;
+              border-radius: 50%;
+              background-color: var(--palepink);
+              
+              svg{
+                color: var(--pink);
+                width: 1.5rem;
+                height: 1.5rem;
+              }
+            }
+            p{
+              font-size: 0.9rem;
+              font-weight: 600;
+            }
+          }
+        }
+
+        .actionButtons {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 2rem;
+
+          a{
+            width: 50%;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+          }
+
+          .callButton{
+            background-color: #e06c92;
+          }
+
+          .whatsappButton{
+            border: 1px solid #16a34a;
+          }
+        }
+      }
+
+      .mapSection {
+        height: 100%;
+
+        .mapContainer {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          border-radius: 2rem;
+          overflow: hidden;
+          box-shadow: 0 10px 40px rgba(254, 177, 198, 0.2);
+          border: 3px solid white;
+
+          iframe {
+            display: block;
+          }
+
+          .mapOverlay {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+
+            .directionsButton {
+              display: inline-flex;
+              align-items: center;
+              gap: 0.5rem;
+              padding: 0.9rem 1.8rem;
+              background: white;
+              color: var(--pink);
+              border-radius: 3rem;
+              font-size: 0.95rem;
+              font-weight: 600;
+              text-decoration: none;
+              box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+              transition: all 0.3s ease;
+              border: 2px solid var(--palepink);
+
+              svg {
+                transition: transform 0.3s ease;
+              }
+
+              &:hover {
+                background: linear-gradient(
+                  135deg,
+                  var(--pink) 0%,
+                  #feb1c6 100%
+                );
+                color: white;
+                transform: translateY(-3px);
+                box-shadow: 0 8px 30px rgba(254, 177, 198, 0.5);
+
+                svg {
+                  transform: scale(1.2);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 1024px) {
+  .container {
+    .content {
+      .mainGrid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+
+        .mapSection {
+          min-height: 450px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 4rem 1.5rem;
+
+    .content {
+      .header {
+        margin-bottom: 3rem;
+
+        h2 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .mainGrid {
+        gap: 2rem;
+
+        .infoSection {
+          .brandCard {
+            padding: 2rem 1.5rem;
+
+            .brandHeader {
+              margin-bottom: 2rem;
+              padding-bottom: 1.5rem;
+
+              .logoCircle {
+                width: 70px;
+                height: 70px;
+              }
+
+              h3 {
+                font-size: 1.5rem;
+              }
+            }
+
+            .contactCards {
+              gap: 1rem;
+
+              .infoCard {
+                padding: 1.25rem;
+                gap: 1rem;
+
+                &:hover {
+                  transform: translateY(-4px);
+                }
+
+                .iconBox {
+                  width: 45px;
+                  height: 45px;
+                }
+
+                .infoText {
+                  h4 {
+                    font-size: 1rem;
+                  }
+
+                  p {
+                    font-size: 0.9rem;
+                  }
+                }
+              }
+            }
+
+            .actionButtons {
+              grid-template-columns: 1fr;
+              gap: 0.75rem;
+
+              a {
+                padding: 0.9rem 1.25rem;
+                font-size: 0.95rem;
+              }
+            }
+          }
+        }
+
+        .mapSection {
+          min-height: 400px;
+
+          .mapContainer {
+            .mapOverlay {
+              bottom: 1rem;
+
+              .directionsButton {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

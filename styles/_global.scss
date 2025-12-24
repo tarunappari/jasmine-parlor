@@ -38,6 +38,7 @@
 :root {
   --white: #ffffff;
   --cream:#fffef8;
+  --palecream: rgb(255, 254, 248, 0.8);
   --text:#3e171b;
   --pink:#471f28;
   --black: #151515;
@@ -56,7 +57,7 @@
 
 body {
   background: var(--white);
-  color: var(--green);
+  color: var(--text);
   font-family: "poppins", sans-serif;
   font-optical-sizing: auto;
 }
@@ -65,11 +66,11 @@ h1,
 h2,
 h3,
 h4 {
-  color: var(--pink);
+  color: var(--text);
   font-family: "playfair", serif;
 }
 
-p{
+p,span{
   color: rgb(62, 23, 27,0.85);
 }
 
@@ -79,3 +80,22 @@ svg {
   cursor: pointer !important;
 }
 
+.testimonial-slider{
+  width: 90vw;
+
+  .startdiv{
+    display: flex;
+    justify-content: space-between;
+
+    .quote{
+      svg{
+        width: 3rem;
+        height: 3rem;
+        position: absolute;
+        left: -3rem;
+        opacity: 1;
+        color: var(--palepink);
+      }
+    }
+  }
+}

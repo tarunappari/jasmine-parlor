@@ -6,7 +6,6 @@ const ModelScene = dynamic(() => import("@/components/3dmodels/ModelScene"), {
 });
 import styles from "@/styles/landingpage/Hero.module.scss";
 import { IconGenderFemale, IconPhone } from "@tabler/icons-react";
-import heroImg from "@/public/assets/hero.png";
 import hero2Img from "@/public/assets/hero5.png";
 import hero3Img from "@/public/assets/hero6.png";
 import fly from "@/public/assets/decors/fly.png";
@@ -14,16 +13,13 @@ import fly2 from "@/public/assets/decors/fly2.png";
 import Image from "next/image";
 
 const Hero = () => {
-
   return (
-    <div className={`${styles.container} hero-section`}>
-      <div className={styles.imgContainer}>
-        <Image src={hero3Img} alt="m" className={styles.leftImg} />
-      </div>
+    <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.modelContainer}>
           <ModelScene />
         </div>
+        <div className={styles.pill}>We can help you✨</div>
         <div>
           <h1>
             Enhancing Your Natural <Image src={fly} alt="fly" width={100} />{" "}
@@ -50,8 +46,13 @@ const Hero = () => {
           <div></div>
         </div>
       </div>
-      <div className={styles.imgContainer}>
-        <Image src={hero2Img} alt="hero" className={styles.rightImg} />
+      <div className={styles.imgMainContainer}>
+        <div className={styles.imgContainer}>
+          <Image src={hero2Img} alt="hero" className={styles.rightImg} />
+        </div>
+        <div className={styles.imgContainer}>
+          <Image src={hero3Img} alt="m" className={styles.leftImg} />
+        </div>
       </div>
     </div>
   );
