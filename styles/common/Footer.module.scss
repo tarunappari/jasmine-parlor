@@ -27,14 +27,17 @@
   .footerContent {
     max-width: 1400px;
     margin: 0 auto;
+    
   }
 
   // Top Section
   .topSection {
-    display: grid;
-    grid-template-columns: 1.5fr 2fr;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 4rem;
-    margin-bottom: 3rem;
+    margin: 3rem 5rem;
+    margin-top: 0;
   }
 
   // Brand Section
@@ -62,16 +65,11 @@
 
   // Links Section
   .linksSection {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    align-items: start;
-    justify-content: start;
 
     .linkColumn {
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: center;
       align-items: flex-end;
       h4 {
         font-family: "aeonik", sans-serif;

@@ -6,10 +6,10 @@ const ModelScene = dynamic(() => import("@/components/3dmodels/ModelScene"), {
 });
 import styles from "@/styles/landingpage/Hero.module.scss";
 import { IconGenderFemale, IconPhone } from "@tabler/icons-react";
-import hero2Img from "@/public/assets/hero5.png";
-import hero3Img from "@/public/assets/hero6.png";
-import fly from "@/public/assets/decors/fly.png";
-import fly2 from "@/public/assets/decors/fly2.png";
+import hero2Img from "@/public/assets/hero5.webp";
+import hero3Img from "@/public/assets/hero6.webp";
+import fly from "@/public/assets/decors/fly.webp";
+import fly2 from "@/public/assets/decors/fly2.webp";
 import Image from "next/image";
 
 const Hero = () => {

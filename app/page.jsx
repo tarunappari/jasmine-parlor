@@ -15,6 +15,7 @@ const page = () => {
       <Hero />
       <AboutUs />
       <Services />
+      <div className='divider'></div>
       <Gallery />
       <TestimonialSection />
       <Contact />

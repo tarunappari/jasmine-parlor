@@ -1,9 +1,9 @@
 .container {
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6rem 2rem;
+  padding:6rem 2rem;
   position: relative;
   overflow: hidden;
 
@@ -84,14 +84,14 @@
               padding: 0.5rem;
               border-radius: 50%;
               background-color: var(--palepink);
-              
-              svg{
+
+              svg {
                 color: var(--pink);
                 width: 1.5rem;
                 height: 1.5rem;
               }
             }
-            p{
+            p {
               font-size: 0.9rem;
               font-weight: 600;
             }
@@ -104,7 +104,7 @@
           justify-content: space-between;
           gap: 2rem;
 
-          a{
+          a {
             width: 50%;
             display: flex;
             align-items: center;
@@ -112,14 +112,30 @@
             justify-content: center;
             padding: 0.5rem;
             border-radius: 0.5rem;
+            transition: 0.2s all;
+
+            &:hover {
+              transform: translateY(-2px);
+            }
           }
 
-          .callButton{
+          .callButton {
             background-color: #e06c92;
+            font-weight: 600;
+
+            &:hover {
+              background-color: rgb(224, 108, 146, 0.95);
+              color: var(--cream);
+            }
           }
 
-          .whatsappButton{
+          .whatsappButton {
             border: 1px solid #16a34a;
+
+            &:hover {
+              background-color: #16a34a;
+              color: var(--cream);
+            }
           }
         }
       }

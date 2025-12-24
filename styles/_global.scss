@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: "poppins";
-  src: url("/fonts/poppins.ttf") format("truetype");
+  src: url("/fonts/popins.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -37,15 +37,15 @@
 
 :root {
   --white: #ffffff;
-  --cream:#fffef8;
+  --cream: #fffef8;
   --palecream: rgb(255, 254, 248, 0.8);
-  --text:#3e171b;
-  --pink:#471f28;
+  --text: #3e171b;
+  --pink: #471f28;
   --black: #151515;
   --palepink: #ffe0e6;
   --charcoal: #050608;
   --gold: #a28b41;
-  --green:#204033;
+  --green: #204033;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -70,8 +70,9 @@ h4 {
   font-family: "playfair", serif;
 }
 
-p,span{
-  color: rgb(62, 23, 27,0.85);
+p,
+span {
+  color: rgb(62, 23, 27, 0.85);
 }
 
 button,
@@ -80,22 +81,14 @@ svg {
   cursor: pointer !important;
 }
 
-.testimonial-slider{
-  width: 90vw;
-
-  .startdiv{
-    display: flex;
-    justify-content: space-between;
-
-    .quote{
-      svg{
-        width: 3rem;
-        height: 3rem;
-        position: absolute;
-        left: -3rem;
-        opacity: 1;
-        color: var(--palepink);
-      }
-    }
-  }
+.divider {
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--palepink) 50%,
+    transparent 100%
+  );
+  margin: 2rem auto;
 }
