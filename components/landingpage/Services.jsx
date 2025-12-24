@@ -89,7 +89,7 @@ const Services = () => {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.7 }}
+      viewport={{ once: true, amount: 0.5 }}
       className={styles.container}
       id="services"
     >

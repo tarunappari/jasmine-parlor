@@ -40,7 +40,7 @@ const AboutUs = () => {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.7 }}
+      viewport={{ once: true, amount: 0.3 }}
       id="about"
     >
       <div className={styles.imgContainer}>
